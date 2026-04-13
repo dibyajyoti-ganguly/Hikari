@@ -1,16 +1,62 @@
-# React + Vite
+# 🌟 Hikari ヒカリ
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Hikari** is a modern anime discovery platform that showcases trending anime and character popularity rankings using the Jikan API. Built with a focus on performance, scalability, and clean UI design.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🚀 Overview
 
-## React Compiler
+Hikari provides users with a seamless interface to explore:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- 🔥 Trending anime  
+- 🧑‍🎤 Popular characters  
+- 📊 Community-driven rankings  
 
-## Expanding the ESLint configuration
+The application leverages real-time data from the Jikan API to deliver up-to-date insights into the anime ecosystem. Built using React and scaffolded using Vite.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## ✨ Features
+
+- ⚡ Fast and responsive UI 
+- 📈 Character popularity rankings  
+- 🔄 Dynamic client-side routing  
+- 🌙 Dark mode ready UI  
+- 📱 Fully responsive design  
+
+---
+
+## ⚙️ Getting Started
+
+### 1. Clone the repository
+```bash
+git clone https://github.com/dibyajyoti-ganguly/Hikari.git
+cd Hikari
+```
+
+### 2. Install dependencies
+```bash
+npm install
+```
+
+### 3. Run development server
+```bash
+npm run dev
+```
+
+---
+
+## 🌐 API Reference
+
+This project uses the Jikan API (Unofficial MyAnimeList API).
+
+- Base URL: `https://api.jikan.moe/v4`  
+- No API key required  
+
+---
+
+Inspired by platforms like AniList and MyAnimeList, with a focus on modern UI/UX and developer-friendly architecture.
+
+---
+
+> *Hikari (光) — Bringing anime into the spotlight.*
