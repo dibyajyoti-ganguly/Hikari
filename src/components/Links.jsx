@@ -1,6 +1,6 @@
 const Links = () => {
   return (
-    <div className="flex items-center gap-4 font-mono">
+    <div className="flex items-center gap-4">
       <button
         type="button"
         className="flex items-center justify-center w-9 h-9 rounded-lg bg-black bg-background text-foreground cursor-pointer"
@@ -30,7 +30,10 @@ const Links = () => {
         </svg>
       </button>
 
-      <button className="cursor-pointer inline-flex shrink-0 items-center justify-center text-sm whitespace-nowrap h-8 gap-1.5 rounded-md px-3 font-bold bg-white text-main-foreground">
+      <a
+        href="https://github.com/dibyajyoti-ganguly/Hikari"
+        className="cursor-pointer inline-flex shrink-0 items-center justify-center text-sm whitespace-nowrap h-8 gap-1.5 rounded-md px-3 font-bold bg-white text-main-foreground"
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"
@@ -49,7 +52,7 @@ const Links = () => {
           <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
         </svg>
         <span className="hidden sm:inline">Contribute</span>
-      </button>
+      </a>
     </div>
   );
 };
