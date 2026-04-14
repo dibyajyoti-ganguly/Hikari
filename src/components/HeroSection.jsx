@@ -7,7 +7,7 @@ const stats = [
 
 const HeroSection = () => {
   return (
-    <section className="bg-black px-6 pb-10 pt-16 text-white">
+    <section className="bg-black px-6 pb-12 pt-16 text-white">
       <div className="mx-auto flex max-w-6xl flex-col items-center">
         <div className="flex max-w-3xl flex-col items-center text-center">
           <img
@@ -25,7 +25,7 @@ const HeroSection = () => {
             rankings built from the anime community&apos;s latest attention.
           </p>
         </div>
-        <div className="mt-14 grid grid-cols-4 w-full max-w-4xl gap-4">
+        <div className="mt-12 grid grid-cols-4 w-full max-w-4xl gap-4">
           {stats.map((stat) => (
             <div
               key={stat.label}
