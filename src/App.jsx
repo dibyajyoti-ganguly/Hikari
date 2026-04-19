@@ -2,7 +2,7 @@ import Header from "./components/Header";
 import Anicontainer from "./components/Anicontainer";
 import HeroSection from "./components/HeroSection";
 import Footer from "./components/Footer";
-import { Analytics } from "@vercel/analytics/next";
+import { Analytics } from "@vercel/analytics/react";
 
 const App = () => {
   return (
