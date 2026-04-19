@@ -1,10 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Hand+Cursive:wght@400..700&display=swap");
 @import "tailwindcss";
 
-body {
-  background-color: black;
+@theme {
+  --font-edu-cursive: "Edu NSW ACT Hand Cursive", cursive;
 }
 
-.font-edu-cursive {
-  font-family: "Edu NSW ACT Hand Cursive", cursive;
+body {
+  background-color: black;
 }

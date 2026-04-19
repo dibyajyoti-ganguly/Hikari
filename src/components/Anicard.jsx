@@ -70,7 +70,7 @@ const AniCard = ({
             </h3>
 
             {/* Chips */}
-            <div className="mt-5 flex flex-wrap gap-2 font-edu-cursive text-xs font-extrabold text-white">
+            <div className="mt-5 flex flex-wrap gap-2 text-xs font-extrabold text-white sm:font-edu-cursive">
               {/* Status */}
               <span className="flex items-center h-7 p-3 border border-zinc-700 rounded-md bg-zinc-900">
                 {truncatedStatus.toUpperCase()}
