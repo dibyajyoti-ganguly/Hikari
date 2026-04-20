@@ -1,9 +1,16 @@
+import { useWebHaptics } from "web-haptics/react";
+
 const Links = ({ isDark, setIsDark }) => {
+  const { trigger } = useWebHaptics();
+
   return (
     <div className="flex items-center gap-2 sm:gap-4">
       <button
         type="button"
-        onClick={() => setIsDark((previousTheme) => !previousTheme)}
+        onClick={() => {
+          setIsDark((previousTheme) => !previousTheme);
+          trigger(20);
+        }}
         aria-label={`Switch to ${isDark ? "light" : "dark"} theme`}
         className={`flex h-9 w-9 cursor-pointer items-center justify-center rounded-lg border transition-colors duration-500 ease-in-out ${
           isDark
@@ -63,9 +70,7 @@ const Links = ({ isDark, setIsDark }) => {
       <a
         href="https://github.com/dibyajyoti-ganguly/Hikari"
         className={`inline-flex h-8 shrink-0 cursor-pointer items-center justify-center gap-1.5 whitespace-nowrap rounded-md px-2.5 text-xs font-bold transition-colors duration-500 ease-in-out sm:px-3 sm:text-sm ${
-          isDark
-            ? "bg-white text-zinc-950"
-            : "bg-zinc-950 text-white"
+          isDark ? "bg-white text-zinc-950" : "bg-zinc-950 text-white"
         }`}
       >
         <svg
