@@ -49,7 +49,7 @@ const AniCard = ({
           <img
             src={images?.webp?.image_url}
             alt={truncatedTitle}
-            className={`h-32 w-24 rounded-lg border object-cover transition-colors duration-300 ease-out ${
+            className={`h-32 w-24 rounded-lg border object-cover ${
               isDark ? "border-zinc-800" : "border-zinc-200"
             }`}
           />
@@ -92,7 +92,7 @@ const AniCard = ({
             >
               {/* Status */}
               <span
-                className={`flex h-7 items-center rounded-md border p-3 transition-colors duration-300 ease-out ${
+                className={`flex h-7 items-center rounded-md border p-3 ${
                   isDark
                     ? "border-zinc-700 bg-zinc-900"
                     : "border-zinc-200 bg-zinc-100"
@@ -103,7 +103,7 @@ const AniCard = ({
 
               {/* Genre */}
               <span
-                className={`flex h-7 items-center rounded-md border p-3 transition-colors duration-300 ease-out ${
+                className={`flex h-7 items-center rounded-md border p-3 ${
                   isDark
                     ? "border-zinc-700 bg-zinc-900"
                     : "border-zinc-200 bg-zinc-100"
@@ -113,7 +113,7 @@ const AniCard = ({
               </span>
               {/* Votes */}
               <span
-                className={`flex h-7 items-center rounded-md border p-3 transition-colors duration-300 ease-out ${
+                className={`flex h-7 items-center rounded-md border p-3 ${
                   isDark
                     ? "border-zinc-700 bg-zinc-900"
                     : "border-zinc-200 bg-zinc-100"
@@ -124,7 +124,7 @@ const AniCard = ({
 
               {/* Episodes */}
               <span
-                className={`flex h-7 items-center rounded-md border p-3 transition-colors duration-300 ease-out ${
+                className={`flex h-7 items-center rounded-md border p-3 ${
                   isDark
                     ? "border-zinc-700 bg-zinc-900"
                     : "border-zinc-200 bg-zinc-100"
@@ -137,7 +137,7 @@ const AniCard = ({
         </div>
 
         <div
-          className={`mt-4 pt-4 transition-[box-shadow] duration-300 ease-out ${
+          className={`mt-4 pt-4 ${
             isDark
               ? "shadow-[inset_0_1px_0_0_rgba(39,39,42,1)]"
               : "shadow-[inset_0_1px_0_0_rgba(228,228,231,1)]"
