@@ -12,6 +12,7 @@ const handlePointerLeave = (event) => {
 };
 
 const AniCard = ({
+  isDark,
   url,
   title,
   title_english,
@@ -33,7 +34,11 @@ const AniCard = ({
     <article
       onPointerMove={handlePointerMove}
       onPointerLeave={handlePointerLeave}
-      className="group relative overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-950 shadow-md transition-shadow duration-200 hover:shadow-lg"
+      className={`group relative overflow-hidden rounded-2xl border shadow-md transition-[background-color,border-color,color,box-shadow] duration-500 ease-in-out hover:shadow-lg ${
+        isDark
+          ? "border-zinc-800 bg-zinc-950"
+          : "border-zinc-200 bg-white shadow-zinc-200/80"
+      }`}
     >
       <div className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
         <div className="absolute inset-0 bg-[radial-gradient(220px_circle_at_var(--glow-x,50%)_var(--glow-y,50%),rgba(255,255,255,0.16),transparent_60%)]" />
@@ -44,20 +49,30 @@ const AniCard = ({
           <img
             src={images?.webp?.image_url}
             alt={truncatedTitle}
-            className="h-32 w-24 rounded-lg border border-zinc-800 object-cover"
+            className={`h-32 w-24 rounded-lg border object-cover ${
+              isDark ? "border-zinc-800" : "border-zinc-200"
+            }`}
           />
 
           {/* Content */}
           <div className="flex min-w-0 flex-1 flex-col">
             {/* Title */}
-            <h3 className="line-clamp-2 text-base font-extrabold text-white tracking-normal flex items-center gap-1">
+            <h3
+              className={`flex items-center gap-1 text-base font-extrabold tracking-normal ${
+                isDark ? "text-white" : "text-zinc-950"
+              }`}
+            >
               <span className="truncate">{truncatedTitle.toUpperCase()}</span>
 
               <a
                 target="_blank"
                 rel="noopener noreferrer"
                 href={url}
-                className="inline-flex items-center justify-center text-muted hover:text-accent transition-colors"
+                className={`inline-flex items-center justify-center transition-colors ${
+                  isDark
+                    ? "text-zinc-400 hover:text-white"
+                    : "text-zinc-500 hover:text-zinc-950"
+                }`}
               >
                 <svg
                   viewBox="0 0 24 24"
@@ -70,23 +85,51 @@ const AniCard = ({
             </h3>
 
             {/* Chips */}
-            <div className="mt-5 flex flex-wrap gap-2 text-xs font-extrabold text-white sm:font-edu-cursive">
+            <div
+              className={`mt-5 flex flex-wrap gap-2 text-xs font-extrabold sm:font-edu-cursive ${
+                isDark ? "text-white" : "text-zinc-950"
+              }`}
+            >
               {/* Status */}
-              <span className="flex items-center h-7 p-3 border border-zinc-700 rounded-md bg-zinc-900">
+              <span
+                className={`flex h-7 items-center rounded-md border p-3 ${
+                  isDark
+                    ? "border-zinc-700 bg-zinc-900"
+                    : "border-zinc-200 bg-zinc-100"
+                }`}
+              >
                 {truncatedStatus.toUpperCase()}
               </span>
 
               {/* Genre */}
-              <span className="flex items-center h-7 p-3 border border-zinc-700 rounded-md bg-zinc-900">
+              <span
+                className={`flex h-7 items-center rounded-md border p-3 ${
+                  isDark
+                    ? "border-zinc-700 bg-zinc-900"
+                    : "border-zinc-200 bg-zinc-100"
+                }`}
+              >
                 {genres[0]?.name.toUpperCase().split(" ")[0]}
               </span>
               {/* Votes */}
-              <span className="flex items-center h-7 p-3 border border-zinc-700 rounded-md bg-zinc-900">
+              <span
+                className={`flex h-7 items-center rounded-md border p-3 ${
+                  isDark
+                    ? "border-zinc-700 bg-zinc-900"
+                    : "border-zinc-200 bg-zinc-100"
+                }`}
+              >
                 {popularity} VOTES
               </span>
 
               {/* Episodes */}
-              <span className="flex items-center h-7 p-3 border border-zinc-700 bg-zinc-900 rounded-md">
+              <span
+                className={`flex h-7 items-center rounded-md border p-3 ${
+                  isDark
+                    ? "border-zinc-700 bg-zinc-900"
+                    : "border-zinc-200 bg-zinc-100"
+                }`}
+              >
                 {episodes} {word}
               </span>
             </div>
@@ -94,10 +137,14 @@ const AniCard = ({
         </div>
 
         {/* Divider */}
-        <div className="my-4 h-px bg-zinc-800" />
+        <div className={`my-4 h-px ${isDark ? "bg-zinc-800" : "bg-zinc-200"}`} />
 
         {/* Synopsis */}
-        <p className="text-sm leading-relaxed text-zinc-400 line-clamp-5">
+        <p
+          className={`line-clamp-5 text-sm leading-relaxed ${
+            isDark ? "text-zinc-400" : "text-zinc-600"
+          }`}
+        >
           {synopsis}
         </p>
       </div>

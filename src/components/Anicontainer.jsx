@@ -2,7 +2,7 @@ import { useEffect, useRef } from "react";
 import AniCard from "./Anicard";
 import useFetch from "../utils/useFetch";
 
-const Anicontainer = () => {
+const Anicontainer = ({ isDark }) => {
   const { list, loading, error, hasMore, loadMore, page, maxPages } =
     useFetch();
   const loadTriggerRef = useRef(null);
@@ -29,19 +29,39 @@ const Anicontainer = () => {
   }, [hasMore, loadMore, loading, list.length]);
 
   return (
-    <section className="bg-black px-4 pb-4 pt-2 text-white sm:px-6">
+    <section
+      className={`px-4 pb-4 pt-2 transition-colors duration-500 ease-in-out sm:px-6 ${
+        isDark ? "bg-black text-white" : "bg-zinc-50 text-zinc-950"
+      }`}
+    >
       <div className="mx-auto max-w-6xl">
         <div className="hidden sm:mb-9 sm:flex flex-row sm:items-center sm:justify-between">
-          <h2 className="text-sm tracking-wide text-zinc-400 sm:text-base">
+          <h2
+            className={`text-sm tracking-wide sm:text-base ${
+              isDark ? "text-zinc-400" : "text-zinc-600"
+            }`}
+          >
             Showing{" "}
-            <span className="text-base font-bold text-white sm:text-lg">
+            <span
+              className={`text-base font-bold sm:text-lg ${
+                isDark ? "text-white" : "text-zinc-950"
+              }`}
+            >
               {list.length}{" "}
             </span>
             animes
           </h2>
-          <p className="text-sm tracking-wide text-zinc-400 sm:text-base">
+          <p
+            className={`text-sm tracking-wide sm:text-base ${
+              isDark ? "text-zinc-400" : "text-zinc-600"
+            }`}
+          >
             Based on{" "}
-            <span className="text-base font-bold text-white sm:text-lg">
+            <span
+              className={`text-base font-bold sm:text-lg ${
+                isDark ? "text-white" : "text-zinc-950"
+              }`}
+            >
               MAL{" "}
             </span>{" "}
             rankings
@@ -49,19 +69,27 @@ const Anicontainer = () => {
         </div>
         <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
           {list.map((anime) => (
-            <AniCard key={anime.mal_id} {...anime} />
+            <AniCard key={anime.mal_id} isDark={isDark} {...anime} />
           ))}
         </div>
         {error ? (
           <p className="mt-8 text-center text-sm text-red-400">{error}</p>
         ) : null}
         {loading ? (
-          <p className="mt-8 text-center text-sm tracking-wide text-zinc-400">
+          <p
+            className={`mt-8 text-center text-sm tracking-wide ${
+              isDark ? "text-zinc-400" : "text-zinc-600"
+            }`}
+          >
             Loading more anime...
           </p>
         ) : null}
         {!hasMore && list.length > 0 ? (
-          <p className="mt-12 text-center text-sm tracking-wide text-zinc-500">
+          <p
+            className={`mt-12 text-center text-sm tracking-wide ${
+              isDark ? "text-zinc-500" : "text-zinc-600"
+            }`}
+          >
             Reached the end of the list after {page} of {maxPages} batches.
           </p>
         ) : null}

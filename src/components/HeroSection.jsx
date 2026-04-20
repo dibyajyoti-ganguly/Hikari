@@ -5,9 +5,13 @@ const stats = [
   { value: "90", label: "Seasons" },
 ];
 
-const HeroSection = () => {
+const HeroSection = ({ isDark }) => {
   return (
-    <section className="bg-black px-4 pb-10 pt-12 text-white sm:px-6 sm:pb-12 sm:pt-16">
+    <section
+      className={`px-4 pb-10 pt-12 transition-colors duration-500 ease-in-out sm:px-6 sm:pb-12 sm:pt-16 ${
+        isDark ? "bg-black text-white" : "bg-zinc-50 text-zinc-950"
+      }`}
+    >
       <div className="mx-auto flex max-w-6xl flex-col items-center">
         <div className="flex max-w-3xl flex-col items-center text-center">
           <img
@@ -20,7 +24,11 @@ const HeroSection = () => {
             <span className="mt-2 block text-red-500">One Place</span>
           </h1>
 
-          <p className="mt-5 max-w-xl text-base leading-7 text-zinc-400 sm:mt-6 sm:text-lg sm:leading-8">
+          <p
+            className={`mt-5 max-w-xl text-base leading-7 sm:mt-6 sm:text-lg sm:leading-8 ${
+              isDark ? "text-zinc-400" : "text-zinc-600"
+            }`}
+          >
             Browse trending shows, track fan-favorite characters, and explore
             rankings built from the anime community&apos;s latest attention.
           </p>
@@ -29,12 +37,20 @@ const HeroSection = () => {
           {stats.map((stat) => (
             <div
               key={stat.label}
-              className="rounded-3xl border border-zinc-800 bg-zinc-900 px-4 py-5 text-center shadow-[inset_0_1px_0_rgba(255,255,255,0.03)] sm:px-6 sm:py-7"
+              className={`rounded-3xl border px-4 py-5 text-center transition-colors duration-500 ease-in-out sm:px-6 sm:py-7 ${
+                isDark
+                  ? "border-zinc-800 bg-zinc-900 shadow-[inset_0_1px_0_rgba(255,255,255,0.03)]"
+                  : "border-zinc-200 bg-white shadow-[0_10px_30px_rgba(15,23,42,0.06)]"
+              }`}
             >
               <p className="text-2xl font-black tracking-tight sm:text-3xl">
                 {stat.value}
               </p>
-              <p className="mt-2 text-xs font-medium text-zinc-400 sm:mt-3 sm:text-sm">
+              <p
+                className={`mt-2 text-xs font-medium sm:mt-3 sm:text-sm ${
+                  isDark ? "text-zinc-400" : "text-zinc-600"
+                }`}
+              >
                 {stat.label}
               </p>
             </div>
