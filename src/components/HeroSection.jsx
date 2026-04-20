@@ -1,8 +1,8 @@
 const stats = [
-  { value: "25K+", label: "Anime Entries" },
-  { value: "8.2K", label: "Characters" },
-  { value: "1.4K", label: "Studios" },
-  { value: "90", label: "Seasons" },
+  { value: "120", label: "Anime Entries" },
+  { value: "1.5K", label: "Characters" },
+  { value: "70", label: "Studios" },
+  { value: "150", label: "Seasons" },
 ];
 
 const HeroSection = ({ isDark }) => {
