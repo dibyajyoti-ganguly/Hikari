@@ -4,7 +4,7 @@ import Links from "./Links";
 const Header = ({ isDark, setIsDark }) => {
   return (
     <header
-      className={`sticky top-0 z-50 border-b px-4 backdrop-blur-sm transition-colors duration-500 ease-in-out sm:px-6 lg:px-10 ${
+      className={`sticky top-0 z-50 border-b px-4 backdrop-blur-sm transition-colors duration-300 ease-out sm:px-6 lg:px-10 ${
         isDark
           ? "border-zinc-800 bg-zinc-900 text-white"
           : "border-zinc-200 bg-white text-zinc-950"

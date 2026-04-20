@@ -12,14 +12,14 @@ const Links = ({ isDark, setIsDark }) => {
           trigger(20);
         }}
         aria-label={`Switch to ${isDark ? "light" : "dark"} theme`}
-        className={`flex h-9 w-9 cursor-pointer items-center justify-center rounded-lg border transition-colors duration-500 ease-in-out ${
+        className={`flex h-9 w-9 cursor-pointer items-center justify-center rounded-lg border transition-colors duration-300 ease-out ${
           isDark
             ? "border-zinc-800 bg-black text-white"
             : "border-zinc-300 bg-white text-zinc-950"
         }`}
       >
         <span
-          className={`flex items-center justify-center transition-transform duration-500 ease-in-out ${
+          className={`flex items-center justify-center transition-transform duration-300 ease-out ${
             isDark ? "rotate-0 scale-100" : "rotate-180 scale-95"
           }`}
         >
@@ -69,7 +69,7 @@ const Links = ({ isDark, setIsDark }) => {
 
       <a
         href="https://github.com/dibyajyoti-ganguly/Hikari"
-        className={`inline-flex h-8 shrink-0 cursor-pointer items-center justify-center gap-1.5 whitespace-nowrap rounded-md px-2.5 text-xs font-bold transition-colors duration-500 ease-in-out sm:px-3 sm:text-sm ${
+        className={`inline-flex h-8 shrink-0 cursor-pointer items-center justify-center gap-1.5 whitespace-nowrap rounded-md px-2.5 text-xs font-bold transition-colors duration-300 ease-out sm:px-3 sm:text-sm ${
           isDark ? "bg-white text-zinc-950" : "bg-zinc-950 text-white"
         }`}
       >

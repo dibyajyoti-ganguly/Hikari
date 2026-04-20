@@ -8,7 +8,7 @@ const stats = [
 const HeroSection = ({ isDark }) => {
   return (
     <section
-      className={`border-b px-4 pb-10 pt-12 transition-colors duration-500 ease-in-out sm:px-6 sm:pb-12 sm:pt-16 ${
+      className={`border-b px-4 pb-10 pt-12 transition-colors duration-300 ease-out sm:px-6 sm:pb-12 sm:pt-16 ${
         isDark
           ? "border-zinc-800 bg-black text-white"
           : "border-zinc-200 bg-zinc-50 text-zinc-950"
@@ -39,10 +39,10 @@ const HeroSection = ({ isDark }) => {
           {stats.map((stat) => (
             <div
               key={stat.label}
-              className={`rounded-3xl border px-4 py-5 text-center transition-colors duration-500 ease-in-out sm:px-6 sm:py-7 ${
+              className={`rounded-3xl px-4 py-5 text-center transition-[background-color,color,box-shadow] duration-300 ease-out sm:px-6 sm:py-7 ${
                 isDark
-                  ? "border-zinc-800 bg-zinc-900 shadow-[inset_0_1px_0_rgba(255,255,255,0.03)]"
-                  : "border-zinc-200 bg-white shadow-[0_10px_30px_rgba(15,23,42,0.06)]"
+                  ? "bg-zinc-900 shadow-[inset_0_0_0_1px_rgba(39,39,42,1),inset_0_1px_0_rgba(255,255,255,0.03)]"
+                  : "bg-white shadow-[inset_0_0_0_1px_rgba(228,228,231,1),0_10px_30px_rgba(15,23,42,0.06)]"
               }`}
             >
               <p className="text-2xl font-black tracking-tight sm:text-3xl">

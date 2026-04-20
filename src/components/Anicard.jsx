@@ -34,10 +34,10 @@ const AniCard = ({
     <article
       onPointerMove={handlePointerMove}
       onPointerLeave={handlePointerLeave}
-      className={`group relative overflow-hidden rounded-2xl border shadow-md transition-[background-color,border-color,color,box-shadow] duration-500 ease-in-out hover:shadow-lg ${
+      className={`group relative overflow-hidden rounded-2xl transition-[background-color,color,box-shadow] duration-300 ease-out hover:shadow-lg ${
         isDark
-          ? "border-zinc-800 bg-zinc-950"
-          : "border-zinc-200 bg-white shadow-zinc-200/80"
+          ? "bg-zinc-950 shadow-[inset_0_0_0_1px_rgba(39,39,42,1)]"
+          : "bg-white shadow-[inset_0_0_0_1px_rgba(228,228,231,1),0_4px_18px_rgba(226,232,240,0.9)]"
       }`}
     >
       <div className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
@@ -49,7 +49,7 @@ const AniCard = ({
           <img
             src={images?.webp?.image_url}
             alt={truncatedTitle}
-            className={`h-32 w-24 rounded-lg border object-cover ${
+            className={`h-32 w-24 rounded-lg border object-cover transition-colors duration-300 ease-out ${
               isDark ? "border-zinc-800" : "border-zinc-200"
             }`}
           />
@@ -92,7 +92,7 @@ const AniCard = ({
             >
               {/* Status */}
               <span
-                className={`flex h-7 items-center rounded-md border p-3 ${
+                className={`flex h-7 items-center rounded-md border p-3 transition-colors duration-300 ease-out ${
                   isDark
                     ? "border-zinc-700 bg-zinc-900"
                     : "border-zinc-200 bg-zinc-100"
@@ -103,7 +103,7 @@ const AniCard = ({
 
               {/* Genre */}
               <span
-                className={`flex h-7 items-center rounded-md border p-3 ${
+                className={`flex h-7 items-center rounded-md border p-3 transition-colors duration-300 ease-out ${
                   isDark
                     ? "border-zinc-700 bg-zinc-900"
                     : "border-zinc-200 bg-zinc-100"
@@ -113,7 +113,7 @@ const AniCard = ({
               </span>
               {/* Votes */}
               <span
-                className={`flex h-7 items-center rounded-md border p-3 ${
+                className={`flex h-7 items-center rounded-md border p-3 transition-colors duration-300 ease-out ${
                   isDark
                     ? "border-zinc-700 bg-zinc-900"
                     : "border-zinc-200 bg-zinc-100"
@@ -124,7 +124,7 @@ const AniCard = ({
 
               {/* Episodes */}
               <span
-                className={`flex h-7 items-center rounded-md border p-3 ${
+                className={`flex h-7 items-center rounded-md border p-3 transition-colors duration-300 ease-out ${
                   isDark
                     ? "border-zinc-700 bg-zinc-900"
                     : "border-zinc-200 bg-zinc-100"
@@ -136,17 +136,21 @@ const AniCard = ({
           </div>
         </div>
 
-        {/* Divider */}
-        <div className={`my-4 h-px ${isDark ? "bg-zinc-800" : "bg-zinc-200"}`} />
-
-        {/* Synopsis */}
-        <p
-          className={`line-clamp-5 text-sm leading-relaxed ${
-            isDark ? "text-zinc-400" : "text-zinc-600"
+        <div
+          className={`mt-4 pt-4 transition-[box-shadow] duration-300 ease-out ${
+            isDark
+              ? "shadow-[inset_0_1px_0_0_rgba(39,39,42,1)]"
+              : "shadow-[inset_0_1px_0_0_rgba(228,228,231,1)]"
           }`}
         >
-          {synopsis}
-        </p>
+          <p
+            className={`line-clamp-5 text-sm leading-relaxed ${
+              isDark ? "text-zinc-400" : "text-zinc-600"
+            }`}
+          >
+            {synopsis}
+          </p>
+        </div>
       </div>
     </article>
   );

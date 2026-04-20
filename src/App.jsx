@@ -16,7 +16,7 @@ const App = () => {
 
   return (
     <div
-      className={`min-h-screen transition-colors duration-500 ease-in-out ${
+      className={`min-h-screen transition-colors duration-300 ease-out ${
         isDark ? "bg-black text-white" : "bg-zinc-50 text-zinc-950"
       }`}
     >

@@ -1,7 +1,7 @@
 const LogoContainer = ({ isDark }) => {
   return (
     <div
-      className={`flex min-w-0 items-center gap-2.5 font-mono font-extrabold transition-colors duration-500 ease-in-out sm:gap-3.5 ${
+      className={`flex min-w-0 items-center gap-2.5 font-mono font-extrabold transition-colors duration-300 ease-out sm:gap-3.5 ${
         isDark ? "text-white" : "text-zinc-950"
       }`}
     >

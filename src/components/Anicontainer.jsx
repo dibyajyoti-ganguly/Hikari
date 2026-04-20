@@ -30,12 +30,12 @@ const Anicontainer = ({ isDark }) => {
 
   return (
     <section
-      className={`px-4 pb-4 pt-2 transition-colors duration-500 ease-in-out sm:px-6 ${
+      className={`px-4 pb-4 pt-2 transition-colors duration-300 ease-out sm:px-6 ${
         isDark ? "bg-black text-white" : "bg-zinc-50 text-zinc-950"
       }`}
     >
       <div className="mx-auto max-w-6xl">
-        <div className="hidden sm:mb-9 sm:flex flex-row sm:items-center sm:justify-between">
+        <div className="hidden sm:mb-9 sm:mt-8 sm:flex sm:flex-row sm:items-center sm:justify-between lg:mt-10">
           <h2
             className={`text-sm tracking-wide sm:text-base ${
               isDark ? "text-zinc-400" : "text-zinc-600"

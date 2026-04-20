@@ -1,7 +1,7 @@
 const Footer = ({ isDark }) => {
   return (
     <footer
-      className={`border-t px-4 pb-14 pt-8 text-center transition-colors duration-500 ease-in-out sm:px-6 sm:pb-16 ${
+      className={`border-t px-4 pb-14 pt-8 text-center transition-colors duration-300 ease-out sm:px-6 sm:pb-16 ${
         isDark ? "border-zinc-800 bg-black" : "border-zinc-200 bg-zinc-50"
       }`}
     >
